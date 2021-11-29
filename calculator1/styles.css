@@ -14,24 +14,25 @@ body {
 }
 body .calculator {
   width: 300px;
+  height: 470px;
   padding: 20px;
   background-color: #87bdd8;
-  border-radius: 5px;
   box-shadow: 10px 10px 10px -10px;
 }
-body .calculator .display {
-  height: 45px;
-  width: 100%;
+body .calculator .output {
+  height: 70px;
   font-size: 30px;
-  align-items: center;
+  width: 100%;
   background-color: #d9ecd0;
   border: none;
-  border-radius: 10px;
   text-align: right;
 }
 body .calculator .row {
   display: flex;
   justify-content: space-between;
+}
+body .calculator .buttons {
+  padding-top: 70px;
 }
 body .calculator button {
   height: 60px;
@@ -49,4 +50,7 @@ body .calculator button:hover {
 }
 body .calculator .operator {
   background-color: #e0e2e4;
+}
+body .calculator #equals {
+  width: 500px;
 }
