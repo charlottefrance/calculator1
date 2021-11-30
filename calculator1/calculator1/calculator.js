@@ -1,3 +1,37 @@
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const clearButton = document.querySelector('[data-clear]')
+const previousElement = document.querySelector('[data-previous]')
+const currentElement = document.querySelector('[data-current]')
+
+const calculator = new Calculator(previousElement,currentElement);
+
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
+  })
+
+clearButton.addEventListener('click', button => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
+
 class Calculator {
     constructor(previousElement, currentElement) {
         this.previousElement = previousElement
@@ -29,26 +63,26 @@ class Calculator {
 
     compute() {
         let computation
-        const prev = parseFloat(this.previousOperand)
-        const current = parseFloat(this.currentOperand)
-        if (isNaN(prev) || isNaN(current)) return
+        const prev = parseFloat(this.previous)
+        const curr = parseFloat(this.current)
+        if (isNaN(prev) || isNaN(curr)) return
         switch (this.operation) {
         case '+':
-            computation = prev + current
+            computation = prev + curr
             break
         case '-':
-            computation = prev - current
+            computation = prev - curr
             break
         case '*':
-            computation = prev * current
+            computation = prev * curr
             break
         case '÷':
-            computation = prev / current
+            computation = prev / curr
             break
         default:
             return
         }
-        this.current = computation
+        this.curr = computation
         this.operation = undefined
         this.previous = ''
     }
@@ -79,36 +113,3 @@ class Calculator {
         }
     }
     }
-
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
-const previousElement = document.querySelector('[data-previous]')
-const currentElement = document.querySelector('[data-current]')
-
-const calculator = new Calculator(previousElement,currentElement);
-
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-
-operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.chooseOperation(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-
-equalsButton.addEventListener('click', button => {
-    calculator.compute()
-    calculator.updateDisplay()
-  })
-
-clearButton.addEventListener('click', button => {
-    calculator.clear()
-    calculator.updateDisplay()
-})
