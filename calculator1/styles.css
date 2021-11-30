@@ -26,6 +26,8 @@ body .calculator .output {
   background-color: #d9ecd0;
   border: none;
   text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 body .calculator .row {
   display: flex;
