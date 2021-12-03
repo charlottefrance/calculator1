@@ -19,7 +19,7 @@ body {
 }
 .calculator .output {
   justify-content: space-around;
-  color: skyblue;
+  color: black;
   background-color: #c7e0f0;
   grid-column: 1/-1;
   display: flex;
