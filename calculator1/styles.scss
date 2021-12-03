@@ -1,68 +1,48 @@
 * {
     padding: 0;
-    margin: 5;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 100px);
 
-body {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #daebe8;
-      font-family: sans-serif;
-    
-    .calculator {
-        width: 300px;
-        height: 470px;
-        padding: 20px;
-        background-color: #87bdd8;
-        box-shadow: 10px 10px 10px -10px;
+    .output {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: flex-end;
+        background-color: #9e9e9e;
+        font-size: 40px;
+        padding: 10px;
+        flex-direction: column;
 
-        
-        .output {
-            height: 70px;
-            font-size: 30px;
-            width: 100%;
-            background-color: #d9ecd0;
-            border: none;
-            text-align: right;
-            word-wrap: break-word;
-            word-break: break-all;
+        .previous {
+            color:antiquewhite
         }
 
-        .row {
-            display: flex;
-            justify-content: space-between;
+        .current {
+            color: wheat;
         }
+    }
 
-        .buttons {
-            padding-top: 70px;
-        }
+    button {
+        height: 100px;
+        width: auto;
+        font-size: 40px;
+        background-color: #9e9e9e;
+    }
 
-        button {
-            height: 60px;
-            width: 65px;
-            background-color: #d9ecd0;
-            border: none;
-            border-radius: 10px;
-            font-style: bold;
-            font-size: 30px;
-            margin: 10px;
-          }
+    button:hover {
+        cursor: pointer;
+        background-color: #a9a9a9;
+    }
 
-        button:hover {
-              cursor: pointer;
-              background-color: #fafafa;
-        }
-
-        .operator {
-            background-color: #e0e2e4;
-        }
-
-        #equals {
-            width:500px;
-        }
+    #equals {
+        grid-column: span 4;
     }
 }
