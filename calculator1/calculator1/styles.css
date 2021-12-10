@@ -4,7 +4,12 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+body {
+  background: linear-gradient(to right, #3a7a8f, #3e6c7e);
+}
+
 .calculator {
+  padding: 20px;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -13,29 +18,32 @@
   grid-template-rows: repeat(5, 100px);
 }
 .calculator .output {
+  justify-content: space-around;
+  color: black;
+  background-color: #c7e0f0;
   grid-column: 1/-1;
   display: flex;
   align-items: flex-end;
-  background-color: #9e9e9e;
   font-size: 40px;
-  padding: 10px;
+  padding-bottom: 20px;
   flex-direction: column;
 }
-.calculator .output .previous {
-  color: antiquewhite;
-}
-.calculator .output .current {
-  color: wheat;
-}
 .calculator button {
+  justify-content: space-evenly;
+  background-color: #d5f3fd;
   height: 100px;
   width: auto;
   font-size: 40px;
-  background-color: #9e9e9e;
 }
-.calculator button:hover {
+.calculator button:hover, .calculator #dot:hover {
   cursor: pointer;
-  background-color: #a9a9a9;
+  background-color: white;
+}
+.calculator .operator, .calculator .data-equal, .calculator .clear, .calculator #dot {
+  background-color: #c7e0f0;
+}
+.calculator .operator .operator:hover, .calculator .data-equal .operator:hover, .calculator .clear .operator:hover, .calculator #dot .operator:hover {
+  background-color: skyblue;
 }
 .calculator #equals {
   grid-column: span 4;
